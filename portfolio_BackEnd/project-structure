@@ -1,0 +1,21 @@
+portfolio_BackEnd/
+├── src/
+│   ├── config/
+│   │   ├── database.js     # 数据库配置
+│   │   └── multer.js       # 文件上传配置
+│   ├── controllers/
+│   │   └── portfolioController.js  # 控制器
+│   ├── middleware/
+│   │   ├── errorHandler.js  # 错误处理中间件
+│   │   └── validator.js     # 请求验证中间件
+│   ├── models/
+│   │   └── Portfolio.js     # 数据模型
+│   ├── routes/
+│   │   └── portfolioRoutes.js  # 路由定义
+│   ├── utils/
+│   │   └── helpers.js      # 工具函数
+│   └── app.js              # 应用入口
+├── uploads/                # 文件上传目录
+├── .env                    # 环境变量
+├── .gitignore             # Git忽略文件
+└── package.json           # 项目配置 

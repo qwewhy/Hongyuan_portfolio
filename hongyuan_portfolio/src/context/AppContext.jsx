@@ -12,9 +12,11 @@ export const AppProvider = ({ children }) => {
   const fetchPortfolios = useCallback(async () => {
     try {
       setLoading(true);
-      const data = await api.getPortfolios();
-      setPortfolios(data);
-      setError(null);
+      const response = await api.getPortfolios();
+      if (response.success) {
+        setPortfolios(response.data);
+        setError(null);
+      }
     } catch (err) {
       setError(err.message);
     } finally {
@@ -26,8 +28,11 @@ export const AppProvider = ({ children }) => {
   const fetchPortfolioById = useCallback(async (id) => {
     try {
       setLoading(true);
-      const data = await api.getPortfolio(id);
-      return data;
+      const response = await api.getPortfolio(id);
+      if (response.success) {
+        return response.data;
+      }
+      return null;
     } catch (err) {
       setError(err.message);
       return null;
@@ -40,14 +45,32 @@ export const AppProvider = ({ children }) => {
   const fetchFeaturedPortfolios = useCallback(async () => {
     try {
       setLoading(true);
-      const data = await api.getPortfolios();
-      // 假设后端会返回一个 featured 字段标记精选作品
-      return data.filter(item => item.featured);
+      const response = await api.getFeaturedPortfolios();
+      if (response.success) {
+        return response.data;
+      }
+      return [];
     } catch (err) {
       setError(err.message);
       return [];
     } finally {
       setLoading(false);
+    }
+  }, []);
+
+  // 上传图片
+  const uploadImage = useCallback(async (file) => {
+    try {
+      const formData = new FormData();
+      formData.append('images', file);
+      const response = await api.uploadImage(formData);
+      if (response.success) {
+        return response.data[0];
+      }
+      return null;
+    } catch (err) {
+      setError(err.message);
+      return null;
     }
   }, []);
 
@@ -58,6 +81,7 @@ export const AppProvider = ({ children }) => {
     fetchPortfolios,
     fetchPortfolioById,
     fetchFeaturedPortfolios,
+    uploadImage,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;

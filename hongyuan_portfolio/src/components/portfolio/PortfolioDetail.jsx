@@ -8,7 +8,26 @@ import Button from '../common/Button';
 const PortfolioDetail = ({ portfolio }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const { title, description, image, tags, content, links, likes, comments } = portfolio;
+
+  // 数据完整性检查 / Data integrity check
+  if (!portfolio) {
+    return (
+      <div className="text-center text-gray-500 py-8">
+        Portfolio not found.
+      </div>
+    );
+  }
+
+  const { 
+    title = '', 
+    description = '', 
+    images = [], 
+    skills = [], 
+    content = '', 
+    links = {}, 
+    likes = 0, 
+    comments = 0 
+  } = portfolio;
 
   return (
     <article className="max-w-2xl mx-auto">
@@ -24,25 +43,29 @@ const PortfolioDetail = ({ portfolio }) => {
       {/* 作品标题 / Portfolio title */}
       <h1 className="text-3xl font-bold text-secondary mb-4">{title}</h1>
 
-      {/* 作品图片 / Portfolio image */}
-      {image && (
-        <div className="relative aspect-video mb-6 rounded-xl overflow-hidden">
-          <img 
-            src={image} 
-            alt={title}
-            className="w-full h-full object-cover"
-          />
+      {/* 作品图片 / Portfolio images */}
+      {images && images.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+          {images.map((image, index) => (
+            <div key={index} className="relative aspect-video rounded-xl overflow-hidden">
+              <img 
+                src={image.url} 
+                alt={`${title} - ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          ))}
         </div>
       )}
 
-      {/* 技术标签 / Technology tags */}
+      {/* 技能标签 / Skill tags */}
       <div className="flex flex-wrap gap-2 mb-6">
-        {tags.map((tag, index) => (
+        {skills && skills.map((skill, index) => (
           <span 
             key={index}
             className="px-3 py-1 text-sm bg-lighter rounded-full text-dark"
           >
-            {tag}
+            {skill.name}
           </span>
         ))}
       </div>

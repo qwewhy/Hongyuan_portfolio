@@ -8,15 +8,32 @@ import Button from '../common/Button';
 // 单个作品展示组件 / Single portfolio item display component
 const PortfolioItem = ({ portfolio }) => {
   const { t } = useTranslation();
-  const { id, title, description, image, tags, likes, comments } = portfolio;
+  
+  // 数据完整性检查 / Data integrity check
+  if (!portfolio) {
+    return null;
+  }
+
+  const { 
+    id = '', 
+    title = '', 
+    description = '', 
+    images = [], 
+    skills = [], 
+    likes = 0, 
+    comments = 0 
+  } = portfolio;
+
+  // 获取第一张图片作为封面 / Get first image as cover
+  const coverImage = images && images.length > 0 ? images[0].url : null;
 
   return (
     <Card className="mb-4">
       {/* 作品图片 / Portfolio image */}
-      {image && (
+      {coverImage && (
         <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
           <img 
-            src={image} 
+            src={coverImage} 
             alt={title}
             className="w-full h-full object-cover"
           />
@@ -31,14 +48,14 @@ const PortfolioItem = ({ portfolio }) => {
         
         <p className="text-dark">{description}</p>
 
-        {/* 技术标签 / Technology tags */}
+        {/* 技能标签 / Skill tags */}
         <div className="flex flex-wrap gap-2">
-          {tags.map((tag, index) => (
+          {skills && skills.map((skill, index) => (
             <span 
               key={index}
               className="px-3 py-1 text-sm bg-lighter rounded-full text-dark"
             >
-              {tag}
+              {skill.name}
             </span>
           ))}
         </div>
