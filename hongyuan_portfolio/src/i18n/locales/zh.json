@@ -1,0 +1,40 @@
+{
+  "header": {
+    "home": "首页",
+    "portfolio": "作品",
+    "about": "关于"
+  },
+  "home": {
+    "greeting": "你好，我是",
+    "name": "洪源",
+    "title": "全栈开发工程师",
+    "description": "热衷于创造优秀的用户体验和解决复杂的技术问题。",
+    "viewPortfolio": "查看作品",
+    "learnMore": "了解更多",
+    "featuredWorks": "精选作品"
+  },
+  "about": {
+    "title": "关于我",
+    "introduction": "你好！我是洪源，一名充满热情的全栈开发工程师。我热衷于使用现代技术栈构建优秀的 Web 应用，并且一直在探索新的技术和最佳实践。",
+    "downloadResume": "下载简历",
+    "skills": "技能专长",
+    "contact": "联系方式"
+  },
+  "portfolio": {
+    "title": "我的作品",
+    "viewDetails": "查看详情",
+    "sourceCode": "源代码",
+    "liveDemo": "在线演示",
+    "back": "返回"
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "出错了：",
+    "notFound": "未找到",
+    "refresh": "刷新页面"
+  },
+  "footer": {
+    "copyright": "© 2024 洪源. 保留所有权利。",
+    "builtWith": "使用 React & Tailwind CSS 构建"
+  }
+} 

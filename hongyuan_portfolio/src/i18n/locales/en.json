@@ -1,0 +1,40 @@
+{
+  "header": {
+    "home": "Home",
+    "portfolio": "Portfolio",
+    "about": "About"
+  },
+  "home": {
+    "greeting": "Hi, I'm",
+    "name": "Hong Yuan",
+    "title": "Full Stack Developer",
+    "description": "Passionate about creating excellent user experiences and solving complex technical problems.",
+    "viewPortfolio": "View Portfolio",
+    "learnMore": "Learn More",
+    "featuredWorks": "Featured Works"
+  },
+  "about": {
+    "title": "About Me",
+    "introduction": "Hello! I'm Hong Yuan, a passionate full-stack developer. I love building excellent web applications using modern tech stacks and am always exploring new technologies and best practices.",
+    "downloadResume": "Download Resume",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "portfolio": {
+    "title": "My Works",
+    "viewDetails": "View Details",
+    "sourceCode": "Source Code",
+    "liveDemo": "Live Demo",
+    "back": "Back"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error: ",
+    "notFound": "Not Found",
+    "refresh": "Refresh Page"
+  },
+  "footer": {
+    "copyright": "© 2024 Hong Yuan. All rights reserved.",
+    "builtWith": "Built with React & Tailwind CSS"
+  }
+} 

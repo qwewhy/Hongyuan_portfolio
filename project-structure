@@ -1,0 +1,29 @@
+hongyuan_portfolio/
+├── src/
+│   ├── api/
+│   │   └── axios.js
+│   ├── components/
+│   │   ├── layout/
+│   │   │   ├── Header.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   ├── Sidebar.jsx
+│   │   │   └── Layout.jsx
+│   │   ├── common/
+│   │   │   ├── Button.jsx
+│   │   │   └── Card.jsx
+│   │   └── portfolio/
+│   │       ├── PortfolioList.jsx
+│   │       ├── PortfolioItem.jsx
+│   │       └── PortfolioDetail.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   ├── About.jsx
+│   │   └── Portfolio.jsx
+│   ├── context/
+│   │   └── AppContext.jsx
+│   ├── styles/
+│   │   └── tailwind.css
+│   └── utils/
+│       └── helpers.js
+├── public/
+└── package.json 
