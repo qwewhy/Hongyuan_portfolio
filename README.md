@@ -123,6 +123,5 @@ MIT
 
 ## 联系方式 / Contact
 
-- Email: your.email@example.com
-- GitHub: [your-username](https://github.com/your-username)
-- LinkedIn: [your-linkedin](https://linkedin.com/in/your-username)
+- Email: Hongyuan.Wang@student.uts.edu.com
+- GitHub: [qwewhy](https://github.com/qwewhy)
