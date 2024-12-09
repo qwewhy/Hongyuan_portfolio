@@ -1,6 +1,6 @@
-import React from 'react';
-import PortfolioItem from './PortfolioItem';
-import Loading from '../common/Loading';
+import React from "react";
+import PortfolioItem from "./PortfolioItem";
+import Loading from "../common/Loading";
 
 // 作品列表组件 / Portfolio list component
 const PortfolioList = ({ portfolios, loading, error }) => {
@@ -11,19 +11,13 @@ const PortfolioList = ({ portfolios, loading, error }) => {
 
   // 错误状态 / Error state
   if (error) {
-    return (
-      <div className="text-center text-red-500 py-8">
-        Error: {error}
-      </div>
-    );
+    return <div className="text-center text-red-500 py-8">Error: {error}</div>;
   }
 
   // 空数据状态 / Empty state
   if (!portfolios || portfolios.length === 0) {
     return (
-      <div className="text-center text-gray-500 py-8">
-        No portfolios found.
-      </div>
+      <div className="text-center text-gray-500 py-8">No portfolios found.</div>
     );
   }
 
@@ -37,4 +31,4 @@ const PortfolioList = ({ portfolios, loading, error }) => {
   );
 };
 
-export default PortfolioList; 
+export default PortfolioList;
